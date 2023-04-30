@@ -10,3 +10,4 @@ openapi-python-client==0.13.4
 uvicorn==0.21.1
 gunicorn==20.1.0
 chromadb
+hnswlib[HNSWLIB_NO_NATIVE]
