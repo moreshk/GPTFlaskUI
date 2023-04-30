@@ -1,0 +1,12 @@
+Jinja2==3.1.0
+Werkzeug==2.1.1
+nltk==3.6.5
+python-dotenv==0.19.2
+langchain>=0.0.138,<=0.0.142  # replace <version> with the version number you are using
+openai==0.27.0
+python-magic==0.4.24
+llama-index==0.5.25
+openapi-python-client==0.13.4
+uvicorn==0.21.1
+gunicorn==20.1.0
+chromadb

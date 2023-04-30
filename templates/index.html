@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-Answering UI</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Question-Answering UI</h1>
+        <form id="question-form">
+            <input type="text" id="question" placeholder="Enter your question...">
+            <button type="submit">Ask</button>
+        </form>
+        <div id="answer-container">
+            <h2>Answer:</h2>
+            <p id="answer"></p>
+        </div>
+    </div>
+    <script>
+        $("#question-form").submit(function(e) {
+            e.preventDefault();
+            let question = $("#question").val();
+            $.post("/ask", { question: question }, function(data) {
+                $("#answer").text(data.answer);
+            });
+        });
+    </script>
+</body>
+</html>
