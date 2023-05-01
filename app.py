@@ -13,7 +13,7 @@ import nltk
 app = Flask(__name__)
 
 # Your existing code
-loader = DirectoryLoader('../text1', glob='**/*.txt')
+loader = DirectoryLoader('./text1', glob='**/*.txt')
 documents = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size = 1000, chunk_overlap = 0)
 texts = text_splitter.split_documents(documents)

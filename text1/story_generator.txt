@@ -1,0 +1,53 @@
+In the last article we investigated why gaming needs blockchain at the macro level. However we also highlighted how blockchains are slow, expensive and cumbersome to use which can be quite limiting when it comes to implementing gaming. While in due course most technical challenges will be solved, the kind of games that first take root as pure onchain games will leverage the key properties of blockchain and use it as its strength.
+
+Blockchains are slow, and there are limitations to the kind of computations that can be done on-chain. The current set of web2 games boast of shiny graphics and near real effects. This is highly computationally intensive. Games which are dexterity based, whose outcomes are dependent on how fast you can press a bunch of buttons, the shoot’ em up games are clearly not a good fit for blockchains.
+
+In due course clever client side processing with zk validations will allow good graphics and responsive effects to work with onchain games. But compared to a typical web 2 game with a centralized solution, these will always be having an uphill battle.
+
+There are however a few other key properties of blockchains that make some specific types of games an ideal fit.
+
+All transactions happening on a blockchain (non privacy versions) are publicly visible
+
+All transactions are recorded in perpetuity leading to a persistent commonly agreed upon record of events that have happened.
+
+These two attributes make it ideal for recording history, or rather stories that are told in real time. The stories can get recorded publicly so that there is canon.
+
+Blockchain tech is also ideal for supporting multiple parties interacting with each other, in fact all transactions typically have atleast 2 parties or sometimes more involved. This means recording events that involve multiple parties is the norm for blockchains.
+
+Blockchain code is typically public, which means it is easier to extend. This means anyone can contribute to the creation of the scenarios that add to the story line.
+
+The public nature of events log also can create a passive audience who consume the stories similar to how people consume reality television.
+
+The games that can be developed on blockchains are going to be subsets of Real time strategy games, but more importantly a successful onchain implementation is likely to be closer to a story generator similar to Dwarf Fortress and Rim world.
+
+While both RTS and Story generators often require similar tech stacks, story generators can often get away with lower tech capabilities. Dwarf fortress is notorious for being a purely ASCII based graphics game, although now it has some graphics (after 20 years!). Rim World graphics are intentionally left to be too basic.
+
+The simplicity of the graphics allows users to use their own imagination to color in the details.
+
+And that is a perfect fit for what blockchain tech can support.
+
+More importantly the nature of publicly recording events in the case of blockchains lends it perfectly for creating stories. Events get logged publicly and are recorded in a persistent manner, so that everyone can agree on a common strand of the story being generated.
+
+Stories are primarily about the characters. While RTS and Story generators might look similar, RTS typically dont deal with feelings and emotions of the characters. Your soldiers are interchangeable within their class. Your farmer is going to go and farm as you command.
+
+In Dwarf fortress your dwarfs could suddenly get reminded of a childhood trauma and go into a state of depression which means they refuse to do what they are expected to do.
+
+In Rimworld your characters might just become lazy and eat, sleep and drink and not do their chores because they developed some chronic conditions.
+
+Story generators focus on the attributes of the characters and less about the buildings. The characters are not their to expand your empire and protect your buildings, but rather the buildings are there to protect your characters.
+
+The characters and their interactions, their emotions is the crux of the story.
+
+This effectively means they develop their unique character which is easy to get invested into. They exhibit foibles that give them richness and depth and the more you play the more rewarding the experience becomes as you get to know your characters at a deeper level.
+
+This means that you get deeply invested in your characters and have a lot of accumulating benefits giving you a reason to keep coming back and mounting losses if you choose not to come back or join a different universe of game play.
+
+Your characters almost become like your children, and the very public nature of their conduct (as being recorded on the blockchain) gives you special reasons to stay invested and ensure behaviour that you want them to.
+
+Our bet at Giant Leap is that story generator class and a new multiplayer variant of that will be the winner combo as far as onchain games are concerned. These in turn will drive the mass adoption so that the tech stack can progress further.
+
+Humans have told each other stories since time immemorial. We passed them through the oral tradition, then we started to write them down. Stories are how we tell each other who we are and more importantly who we were. A way of preserving memory across time.
+
+The point of a story is to be told, and be told to as many people possible. That is the only way they survive and keep our memory alive.
+
+We will always tell stories, and now we will start recording them on a public persistent record as they are created. Because when we keep a story alive what we are really doing is keeping a part of us alive.
