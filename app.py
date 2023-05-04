@@ -8,19 +8,23 @@ from dotenv import load_dotenv
 load_dotenv()
 import magic
 import nltk
-# ... other imports
+import os
 
 app = Flask(__name__)
 
 # Your existing code
-loader = DirectoryLoader('./text1', glob='**/*.txt')
-documents = loader.load()
-text_splitter = CharacterTextSplitter(chunk_size = 1000, chunk_overlap = 0)
-texts = text_splitter.split_documents(documents)
+def reload_documents():
+    loader = DirectoryLoader('./text1', glob='**/*.txt')
+    return loader.load()
+
+def reload_text_splitter():
+    return CharacterTextSplitter(chunk_size = 1000, chunk_overlap = 0)
+
+documents = reload_documents()
+text_splitter = reload_text_splitter()
 embeddings = OpenAIEmbeddings()
-docsearch = Chroma.from_documents(texts, embeddings)
+docsearch = Chroma.from_documents(text_splitter.split_documents(documents), embeddings)
 qa = VectorDBQA.from_chain_type(llm=OpenAI(), chain_type="stuff", vectorstore = docsearch)
-# ... other code
 
 @app.route('/')
 def index():
@@ -31,6 +35,18 @@ def ask():
     question = request.form['question']
     answer = qa.run(question)
     return jsonify(answer=answer)
+
+@app.route('/upload', methods=['POST'])
+def upload():
+    file = request.files['file']
+    filename = file.filename
+    file.save(os.path.join('./text1', filename))
+    global documents, text_splitter, docsearch, qa
+    documents = reload_documents()
+    text_splitter = reload_text_splitter()
+    docsearch = Chroma.from_documents(text_splitter.split_documents(documents), embeddings)
+    qa = VectorDBQA.from_chain_type(llm=OpenAI(), chain_type="stuff", vectorstore = docsearch)
+    return 'File uploaded successfully!'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8000, debug=True)

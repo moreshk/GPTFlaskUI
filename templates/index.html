@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/static/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <h1>Question-Answering UI</h1>
@@ -18,15 +20,37 @@
             <h2>Answer:</h2>
             <p id="answer"></p>
         </div>
+        <h1>
+            Upload file
+        </h1>
+        <form id="upload-form" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".txt">
+            <button type="submit">Upload</button>
+        </form>
     </div>
     <script>
-        $("#question-form").submit(function(e) {
+        $("#question-form").submit(function (e) {
             e.preventDefault();
             let question = $("#question").val();
-            $.post("/ask", { question: question }, function(data) {
+            $.post("/ask", { question: question }, function (data) {
                 $("#answer").text(data.answer);
+            });
+        });
+        $("#upload-form").submit(function (e) {
+            e.preventDefault();
+            let formData = new FormData(this);
+            $.ajax({
+                url: "/upload",
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    alert(response);
+                }
             });
         });
     </script>
 </body>
+
 </html>
